@@ -14,6 +14,13 @@
 		E77134461E377D1E0010B0A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E771343F1E377D1E0010B0A7 /* Main.storyboard */; };
 		E7887D351E38F9D000E2AC15 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887D341E38F9D000E2AC15 /* NetworkHelper.swift */; };
 		E7ACC7AD1E3907FB00D1E00D /* OLXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7AC1E3907FB00D1E00D /* OLXAPIManager.swift */; };
+		E7ACC7AF1E390FF500D1E00D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7AE1E390FF500D1E00D /* CoreDataStack.swift */; };
+		E7ACC7B21E39100900D1E00D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B01E39100900D1E00D /* Model.xcdatamodeld */; };
+		E7ACC7B71E39127C00D1E00D /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B31E39127C00D1E00D /* Item+CoreDataClass.swift */; };
+		E7ACC7B81E39127C00D1E00D /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B41E39127C00D1E00D /* Item+CoreDataProperties.swift */; };
+		E7ACC7B91E39127C00D1E00D /* Price+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B51E39127C00D1E00D /* Price+CoreDataClass.swift */; };
+		E7ACC7BA1E39127C00D1E00D /* Price+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B61E39127C00D1E00D /* Price+CoreDataProperties.swift */; };
+		E7ACC7BC1E39134400D1E00D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7ACC7BB1E39134400D1E00D /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		E77134411E377D1E0010B0A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7887D341E38F9D000E2AC15 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		E7ACC7AC1E3907FB00D1E00D /* OLXAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXAPIManager.swift; sourceTree = "<group>"; };
+		E7ACC7AE1E390FF500D1E00D /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E7ACC7B11E39100900D1E00D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E7ACC7B31E39127C00D1E00D /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E7ACC7B41E39127C00D1E00D /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E7ACC7B51E39127C00D1E00D /* Price+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Price+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E7ACC7B61E39127C00D1E00D /* Price+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Price+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E7ACC7BB1E39134400D1E00D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7ACC7BC1E39134400D1E00D /* CoreData.framework in Frameworks */,
 				574BFBF51CDB7A0FD1E007C0 /* Pods_olx_client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +60,7 @@
 		641197DBC3F70B8A3F410683 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7ACC7BB1E39134400D1E00D /* CoreData.framework */,
 				883286732A28C022355BF83D /* Pods_olx_client.framework */,
 			);
 			name = Frameworks;
@@ -108,6 +124,7 @@
 		E77134381E377D1E0010B0A7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E7ACC7AE1E390FF500D1E00D /* CoreDataStack.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -115,6 +132,10 @@
 		E77134391E377D1E0010B0A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7ACC7B31E39127C00D1E00D /* Item+CoreDataClass.swift */,
+				E7ACC7B41E39127C00D1E00D /* Item+CoreDataProperties.swift */,
+				E7ACC7B51E39127C00D1E00D /* Price+CoreDataClass.swift */,
+				E7ACC7B61E39127C00D1E00D /* Price+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +156,7 @@
 				E771343D1E377D1E0010B0A7 /* LaunchScreen.storyboard */,
 				E771343F1E377D1E0010B0A7 /* Main.storyboard */,
 				E77134411E377D1E0010B0A7 /* Info.plist */,
+				E7ACC7B01E39100900D1E00D /* Model.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -264,9 +286,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7ACC7B81E39127C00D1E00D /* Item+CoreDataProperties.swift in Sources */,
+				E7ACC7B71E39127C00D1E00D /* Item+CoreDataClass.swift in Sources */,
 				E7ACC7AD1E3907FB00D1E00D /* OLXAPIManager.swift in Sources */,
+				E7ACC7B91E39127C00D1E00D /* Price+CoreDataClass.swift in Sources */,
 				E7887D351E38F9D000E2AC15 /* NetworkHelper.swift in Sources */,
+				E7ACC7B21E39100900D1E00D /* Model.xcdatamodeld in Sources */,
 				E77134211E377CB30010B0A7 /* AppDelegate.swift in Sources */,
+				E7ACC7AF1E390FF500D1E00D /* CoreDataStack.swift in Sources */,
+				E7ACC7BA1E39127C00D1E00D /* Price+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +469,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E7ACC7B01E39100900D1E00D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E7ACC7B11E39100900D1E00D /* Model.xcdatamodel */,
+			);
+			currentVersion = E7ACC7B11E39100900D1E00D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E77134151E377CB30010B0A7 /* Project object */;
 }

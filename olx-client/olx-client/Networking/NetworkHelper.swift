@@ -9,14 +9,20 @@
 import UIKit
 import Alamofire
 
+typealias JSON = [String: Any]
+
 class NetworkHelper: NSObject {
 
     func request(_ url: URL,
                  params: [String: Any],
-                 completionHandler: @escaping (Any?, Error?) -> Void) {
-        Alamofire.request(url, parameters: params).responseJSON { response in
-            completionHandler(response.result.value,
-                              response.error)
+                 completionHandler: @escaping (JSON?, Error?) -> Void) {
+        Alamofire.request(url, parameters: params).responseData { response in
+            if response.error != nil {
+                completionHandler(nil, response.error)
+            } else {
+                let json = try! JSONSerialization.jsonObject(with: response.result.value!) as? JSON
+                completionHandler(json, nil)
+            }
         }
     }
 }
