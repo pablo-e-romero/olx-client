@@ -1,0 +1,6 @@
+framework module Pods_olx_client {
+  umbrella header "Pods-olx-client-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -68,3 +68,5 @@ fastlane/test_output
 /olx-client/olx-client/.DS_Store
 
 /olx-client/olx-client.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+/olx-client/olx-client.xcworkspace/
