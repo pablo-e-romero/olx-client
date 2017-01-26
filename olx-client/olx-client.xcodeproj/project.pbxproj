@@ -27,6 +27,8 @@
 		E7ACC7D61E3A35FB00D1E00D /* UIAlertController+Simplified.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7CE1E3A35FB00D1E00D /* UIAlertController+Simplified.swift */; };
 		E7ACC7D81E3A35FB00D1E00D /* FileSystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7D11E3A35FB00D1E00D /* FileSystemHelper.swift */; };
 		E7ACC7DD1E3A55B400D1E00D /* NSDate+ISO860.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7DC1E3A55B400D1E00D /* NSDate+ISO860.swift */; };
+		E7ACC7E11E3A6E2600D1E00D /* UIRemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7E01E3A6E2600D1E00D /* UIRemoteImageView.swift */; };
+		E7ACC7E31E3A6E2D00D1E00D /* URL+md5Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7E21E3A6E2D00D1E00D /* URL+md5Hash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		E7ACC7CE1E3A35FB00D1E00D /* UIAlertController+Simplified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Simplified.swift"; sourceTree = "<group>"; };
 		E7ACC7D11E3A35FB00D1E00D /* FileSystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemHelper.swift; sourceTree = "<group>"; };
 		E7ACC7DC1E3A55B400D1E00D /* NSDate+ISO860.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+ISO860.swift"; sourceTree = "<group>"; };
+		E7ACC7E01E3A6E2600D1E00D /* UIRemoteImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRemoteImageView.swift; sourceTree = "<group>"; };
+		E7ACC7E21E3A6E2D00D1E00D /* URL+md5Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+md5Hash.swift"; sourceTree = "<group>"; };
+		E7ACC7E41E3A773F00D1E00D /* olx-client-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "olx-client-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +95,7 @@
 		E77134141E377CB30010B0A7 = {
 			isa = PBXGroup;
 			children = (
+				E7ACC7E41E3A773F00D1E00D /* olx-client-Bridging-Header.h */,
 				E771341F1E377CB30010B0A7 /* olx-client */,
 				E771341E1E377CB30010B0A7 /* Products */,
 				D574FE9192706E421BD6701D /* Pods */,
@@ -173,6 +179,7 @@
 				E7ACC7CA1E3A35FB00D1E00D /* Data */,
 				E7ACC7CC1E3A35FB00D1E00D /* Extensions */,
 				E7ACC7D01E3A35FB00D1E00D /* Fle System */,
+				E7ACC7DF1E3A6E2600D1E00D /* UI */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 		E7ACC7CC1E3A35FB00D1E00D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E7ACC7E21E3A6E2D00D1E00D /* URL+md5Hash.swift */,
 				E7ACC7DC1E3A55B400D1E00D /* NSDate+ISO860.swift */,
 				E7ACC7CD1E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift */,
 				E7ACC7CE1E3A35FB00D1E00D /* UIAlertController+Simplified.swift */,
@@ -201,6 +209,14 @@
 				E7ACC7D11E3A35FB00D1E00D /* FileSystemHelper.swift */,
 			);
 			path = "Fle System";
+			sourceTree = "<group>";
+		};
+		E7ACC7DF1E3A6E2600D1E00D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E7ACC7E01E3A6E2600D1E00D /* UIRemoteImageView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,7 +353,9 @@
 				E7ACC7B91E39127C00D1E00D /* Price+CoreDataClass.swift in Sources */,
 				E7887D351E38F9D000E2AC15 /* NetworkHelper.swift in Sources */,
 				E7ACC7D41E3A35FB00D1E00D /* CoreDataStack.swift in Sources */,
+				E7ACC7E31E3A6E2D00D1E00D /* URL+md5Hash.swift in Sources */,
 				E7ACC7DD1E3A55B400D1E00D /* NSDate+ISO860.swift in Sources */,
+				E7ACC7E11E3A6E2600D1E00D /* UIRemoteImageView.swift in Sources */,
 				E7ACC7C21E398C7500D1E00D /* ItemsViewController.swift in Sources */,
 				E7ACC7D51E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift in Sources */,
 				E7ACC7B21E39100900D1E00D /* Model.xcdatamodeld in Sources */,
@@ -467,12 +485,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PKK38A5A2E;
 				INFOPLIST_FILE = "$(SRCROOT)/olx-client/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "microeditionbiz.olx-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "olx-client-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -484,12 +505,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PKK38A5A2E;
 				INFOPLIST_FILE = "$(SRCROOT)/olx-client/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "microeditionbiz.olx-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "olx-client-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -13,7 +13,7 @@ typealias JSON = [String: Any]
 
 class NetworkHelper: NSObject {
 
-    func request(_ url: URL,
+    static func request(_ url: URL,
                  params: [String: Any],
                  completionHandler: @escaping (JSON?, Error?) -> Void) {
         Alamofire.request(url, parameters: params).responseData { response in
@@ -23,6 +23,19 @@ class NetworkHelper: NSObject {
                 let json = try! JSONSerialization.jsonObject(with: response.result.value!) as? JSON
                 completionHandler(json, nil)
             }
+        }
+    }
+    
+    static func downloadContent(fromUrl url: URL,
+                                to localUrl: URL,
+                                completionHandler: @escaping (URL, URL?, Error?) -> Void) {
+    
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            return (localUrl, [.removePreviousFile, .createIntermediateDirectories])
+        }
+    
+        Alamofire.download(url, to: destination).response { response in
+            completionHandler(url, localUrl, response.error)
         }
     }
 }

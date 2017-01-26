@@ -10,8 +10,7 @@ import UIKit
 
 class ItemCell: UITableViewCell {
 
-    @IBOutlet weak var thumbnailImageView: UIImageView!
-    
+    @IBOutlet weak var thumbnailImageView: UIRemoteImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     
@@ -26,6 +25,14 @@ class ItemCell: UITableViewCell {
     }
 
     func update(withItem item: Item) {
+        
         self.titleLabel.text = item.title
+        
+        if let thumbnail = item.mediumImage {
+            let thumbnailUrl = URL(string: thumbnail)!
+            self.thumbnailImageView.setContent(url: thumbnailUrl)
+        } else {
+            self.thumbnailImageView.setContent(url: nil)
+        }
     }
 }

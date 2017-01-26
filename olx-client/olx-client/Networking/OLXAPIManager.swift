@@ -12,14 +12,8 @@ import CoreData
 class OLXAPIManager: NSObject {
     
     static let sharedInstance = OLXAPIManager()
-    var network: NetworkHelper
     let defaultPageSize: UInt = 25
     let baseUrl = URL(string: "http://api-v2.olx.com")!
-    
-    override init() {
-        self.network = NetworkHelper()
-        super.init()
-    }
     
     func requestItems(searchTerm: String = "", atPage page: UInt = 0,
                       completionHandler: @escaping (Error?) -> Void) {
@@ -33,7 +27,7 @@ class OLXAPIManager: NSObject {
         params["pageSize"] = self.defaultPageSize
         params["offset"] = offset
         
-        self.network.request(url, params: params) { (json: JSON?, error: Error?) in
+        NetworkHelper.request(url, params: params) { (json: JSON?, error: Error?) in
             
             if error != nil {
                 DispatchQueue.main.async {

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--OLX-->
+        <!--Items View Controller-->
         <scene sceneID="KtH-Zd-qzi">
             <objects>
                 <tableViewController id="Tf5-Ya-TAU" customClass="ItemsViewController" customModule="olx_client" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,62 +42,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZ8-O7-zN7">
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHO-0y-Xu0" userLabel="Header Container">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is a title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="34" translatesAutoresizingMaskIntoConstraints="NO" id="OIs-NA-HRt">
+                                                    <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Pc5-Le-mdy"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="lQ1-NW-Nmj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="OIs-NA-HRt" firstAttribute="top" secondItem="ZHO-0y-Xu0" secondAttribute="top" constant="8" id="9Gn-gw-cON"/>
+                                                <constraint firstAttribute="trailing" secondItem="OIs-NA-HRt" secondAttribute="trailing" constant="8" id="UYF-Vy-qiV"/>
+                                                <constraint firstItem="OIs-NA-HRt" firstAttribute="leading" secondItem="ZHO-0y-Xu0" secondAttribute="leading" constant="8" id="mHE-yH-aqc"/>
+                                            </constraints>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZ8-O7-zN7" customClass="UIRemoteImageView" customModule="olx_client" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                                             <color key="backgroundColor" red="0.84313725490000002" green="0.85882352939999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SI-6J-lTv">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NxE-Zd-zmP">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nhr-t2-1IU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BQA-Z8-ih9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="34" translatesAutoresizingMaskIntoConstraints="NO" id="OIs-NA-HRt">
-                                                                    <rect key="frame" x="8" y="8" width="304" height="21"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="21" id="Pc5-Le-mdy"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="OIs-NA-HRt" firstAttribute="top" secondItem="BQA-Z8-ih9" secondAttribute="top" constant="8" id="BFI-7r-KSE"/>
-                                                                <constraint firstItem="OIs-NA-HRt" firstAttribute="leading" secondItem="BQA-Z8-ih9" secondAttribute="leading" constant="8" id="IKB-3E-cXG"/>
-                                                                <constraint firstAttribute="trailing" secondItem="OIs-NA-HRt" secondAttribute="trailing" constant="8" id="gUa-P6-Crz"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <vibrancyEffect>
-                                                            <blurEffect style="light"/>
-                                                        </vibrancyEffect>
-                                                    </visualEffectView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Nhr-t2-1IU" firstAttribute="top" secondItem="NxE-Zd-zmP" secondAttribute="top" id="BWd-YT-sLJ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Nhr-t2-1IU" secondAttribute="trailing" id="GtN-0O-Cja"/>
-                                                    <constraint firstItem="Nhr-t2-1IU" firstAttribute="leading" secondItem="NxE-Zd-zmP" secondAttribute="leading" id="Tgt-Ej-DNd"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Nhr-t2-1IU" secondAttribute="bottom" id="qo7-Mh-J7h"/>
-                                                </constraints>
-                                            </view>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="WiH-Fc-F9h"/>
-                                            </constraints>
-                                            <blurEffect style="extraLight"/>
-                                        </visualEffectView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="gZ8-O7-zN7" firstAttribute="top" secondItem="hC9-fh-T5V" secondAttribute="top" id="LUD-aw-BdS"/>
                                         <constraint firstAttribute="trailing" secondItem="gZ8-O7-zN7" secondAttribute="trailing" id="UKp-Ts-JbR"/>
-                                        <constraint firstItem="8SI-6J-lTv" firstAttribute="top" secondItem="hC9-fh-T5V" secondAttribute="top" id="VPZ-DT-Mda"/>
-                                        <constraint firstItem="8SI-6J-lTv" firstAttribute="leading" secondItem="hC9-fh-T5V" secondAttribute="leading" id="XsN-hb-Bsl"/>
-                                        <constraint firstAttribute="trailing" secondItem="8SI-6J-lTv" secondAttribute="trailing" id="k8a-4V-pF5"/>
                                         <constraint firstAttribute="bottom" secondItem="gZ8-O7-zN7" secondAttribute="bottom" id="pFz-Qs-grb"/>
                                         <constraint firstItem="gZ8-O7-zN7" firstAttribute="leading" secondItem="hC9-fh-T5V" secondAttribute="leading" id="uiP-Zy-Eij"/>
                                     </constraints>
@@ -113,7 +86,7 @@
                             <outlet property="delegate" destination="Tf5-Ya-TAU" id="ULg-JG-UcL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="OLX" id="q8C-dw-VoF"/>
+                    <navigationItem key="navigationItem" id="q8C-dw-VoF"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="PBV-SG-Jo5">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -130,9 +103,14 @@
         <scene sceneID="IA7-xX-lLD">
             <objects>
                 <navigationController id="5FF-gf-222" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T95-wJ-Bno">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.090196078431372548" green="0.68235294117647061" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Tf5-Ya-TAU" kind="relationship" relationship="rootViewController" id="qM7-Vd-fNA"/>

@@ -16,10 +16,16 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "OLX"
+        self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "OlxLogo"))
         
         self.setupTableView()
         self.requestFirstPage()
+        
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     func handleRefresh(refreshControl: UIRefreshControl) {
