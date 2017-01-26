@@ -49,7 +49,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZ8-O7-zN7" customClass="UIRemoteImageView" customModule="olx_client" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="304" height="242"/>
-                                                    <color key="backgroundColor" red="0.84313725490000002" green="0.85882352939999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="242" id="tYK-V1-qWP"/>
                                                     </constraints>

@@ -62,9 +62,10 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
         
         self.refreshLoadingNextPageView()
         
-        self.refreshControl?.addTarget(self,
+        self.refreshControl!.addTarget(self,
                                        action: #selector(ItemsViewController.handleRefresh(refreshControl:)),
                                        for: UIControlEvents.valueChanged)
+        self.refreshControl!.tintColor = UIColor.olxGreen
     }
     
     func refreshLoadingNextPageView() {
