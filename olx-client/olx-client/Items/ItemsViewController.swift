@@ -87,6 +87,12 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     
     override func tableView(_ tableView: UITableView,
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let item = self.fetchedResultsController.object(at: indexPath)
+        return ItemCell.neededHeight(forItem: item)
+    }
+    
+    override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell",

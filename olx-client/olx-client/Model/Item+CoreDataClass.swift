@@ -197,8 +197,8 @@ public class Item: NSManagedObject {
         }
         
         if let date = json["date"] as? JSON {
-            if let timestamp = date["timestamp"] as? String, let timezone = date["timezone"] as? String {
-                self.createdAt = NSDate.date(withISO860String: "\(timestamp)\(timezone)")
+            if let timestamp = date["timestamp"] as? String {
+                self.createdAt = NSDate.date(withISO860String: timestamp)
             } else {
                 self.createdAt = nil
             }
@@ -207,11 +207,11 @@ public class Item: NSManagedObject {
         }
     }
     
-    func hasThumbnail() -> Bool {
-        if let thumbnail = self.thumbnail {
-            return !thumbnail.isEmpty
+    func mediumImageUrl() -> URL? {
+        if let mediumImage = self.mediumImage, !mediumImage.isEmpty {
+            return URL(string: self.mediumImage!)
         } else {
-            return false;
+            return nil;
         }
     }
 
