@@ -14,13 +14,19 @@
 		E77134461E377D1E0010B0A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E771343F1E377D1E0010B0A7 /* Main.storyboard */; };
 		E7887D351E38F9D000E2AC15 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887D341E38F9D000E2AC15 /* NetworkHelper.swift */; };
 		E7ACC7AD1E3907FB00D1E00D /* OLXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7AC1E3907FB00D1E00D /* OLXAPIManager.swift */; };
-		E7ACC7AF1E390FF500D1E00D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7AE1E390FF500D1E00D /* CoreDataStack.swift */; };
 		E7ACC7B21E39100900D1E00D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B01E39100900D1E00D /* Model.xcdatamodeld */; };
 		E7ACC7B71E39127C00D1E00D /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B31E39127C00D1E00D /* Item+CoreDataClass.swift */; };
 		E7ACC7B81E39127C00D1E00D /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B41E39127C00D1E00D /* Item+CoreDataProperties.swift */; };
 		E7ACC7B91E39127C00D1E00D /* Price+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B51E39127C00D1E00D /* Price+CoreDataClass.swift */; };
 		E7ACC7BA1E39127C00D1E00D /* Price+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7B61E39127C00D1E00D /* Price+CoreDataProperties.swift */; };
 		E7ACC7BC1E39134400D1E00D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7ACC7BB1E39134400D1E00D /* CoreData.framework */; };
+		E7ACC7C21E398C7500D1E00D /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7C11E398C7500D1E00D /* ItemsViewController.swift */; };
+		E7ACC7C81E39978200D1E00D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7C71E39978200D1E00D /* ItemCell.swift */; };
+		E7ACC7D41E3A35FB00D1E00D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7CB1E3A35FB00D1E00D /* CoreDataStack.swift */; };
+		E7ACC7D51E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7CD1E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift */; };
+		E7ACC7D61E3A35FB00D1E00D /* UIAlertController+Simplified.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7CE1E3A35FB00D1E00D /* UIAlertController+Simplified.swift */; };
+		E7ACC7D81E3A35FB00D1E00D /* FileSystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7D11E3A35FB00D1E00D /* FileSystemHelper.swift */; };
+		E7ACC7DD1E3A55B400D1E00D /* NSDate+ISO860.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ACC7DC1E3A55B400D1E00D /* NSDate+ISO860.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +41,19 @@
 		E77134411E377D1E0010B0A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7887D341E38F9D000E2AC15 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		E7ACC7AC1E3907FB00D1E00D /* OLXAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXAPIManager.swift; sourceTree = "<group>"; };
-		E7ACC7AE1E390FF500D1E00D /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E7ACC7B11E39100900D1E00D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E7ACC7B31E39127C00D1E00D /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E7ACC7B41E39127C00D1E00D /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E7ACC7B51E39127C00D1E00D /* Price+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Price+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E7ACC7B61E39127C00D1E00D /* Price+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Price+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E7ACC7BB1E39134400D1E00D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E7ACC7C11E398C7500D1E00D /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		E7ACC7C71E39978200D1E00D /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		E7ACC7CB1E3A35FB00D1E00D /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E7ACC7CD1E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+FriendlyDescription.swift"; sourceTree = "<group>"; };
+		E7ACC7CE1E3A35FB00D1E00D /* UIAlertController+Simplified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Simplified.swift"; sourceTree = "<group>"; };
+		E7ACC7D11E3A35FB00D1E00D /* FileSystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSystemHelper.swift; sourceTree = "<group>"; };
+		E7ACC7DC1E3A55B400D1E00D /* NSDate+ISO860.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+ISO860.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,36 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				E77134201E377CB30010B0A7 /* AppDelegate.swift */,
-				E77134341E377D1E0010B0A7 /* Details */,
-				E77134361E377D1E0010B0A7 /* Feed */,
-				E77134381E377D1E0010B0A7 /* Helpers */,
+				E7ACC7C91E3A35FB00D1E00D /* Helpers */,
+				E7ACC7BF1E398C7500D1E00D /* Items */,
 				E77134391E377D1E0010B0A7 /* Model */,
 				E771343A1E377D1E0010B0A7 /* Networking */,
 				E771343B1E377D1E0010B0A7 /* Resources */,
 			);
 			path = "olx-client";
-			sourceTree = "<group>";
-		};
-		E77134341E377D1E0010B0A7 /* Details */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Details;
-			sourceTree = "<group>";
-		};
-		E77134361E377D1E0010B0A7 /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Feed;
-			sourceTree = "<group>";
-		};
-		E77134381E377D1E0010B0A7 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				E7ACC7AE1E390FF500D1E00D /* CoreDataStack.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E77134391E377D1E0010B0A7 /* Model */ = {
@@ -159,6 +148,59 @@
 				E7ACC7B01E39100900D1E00D /* Model.xcdatamodeld */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E7ACC7BF1E398C7500D1E00D /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				E7ACC7C11E398C7500D1E00D /* ItemsViewController.swift */,
+				E7ACC7C71E39978200D1E00D /* ItemCell.swift */,
+				E7ACC7C01E398C7500D1E00D /* Details */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		E7ACC7C01E398C7500D1E00D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		E7ACC7C91E3A35FB00D1E00D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E7ACC7CA1E3A35FB00D1E00D /* Data */,
+				E7ACC7CC1E3A35FB00D1E00D /* Extensions */,
+				E7ACC7D01E3A35FB00D1E00D /* Fle System */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E7ACC7CA1E3A35FB00D1E00D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E7ACC7CB1E3A35FB00D1E00D /* CoreDataStack.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E7ACC7CC1E3A35FB00D1E00D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E7ACC7DC1E3A55B400D1E00D /* NSDate+ISO860.swift */,
+				E7ACC7CD1E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift */,
+				E7ACC7CE1E3A35FB00D1E00D /* UIAlertController+Simplified.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E7ACC7D01E3A35FB00D1E00D /* Fle System */ = {
+			isa = PBXGroup;
+			children = (
+				E7ACC7D11E3A35FB00D1E00D /* FileSystemHelper.swift */,
+			);
+			path = "Fle System";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,14 +328,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7ACC7D81E3A35FB00D1E00D /* FileSystemHelper.swift in Sources */,
+				E7ACC7D61E3A35FB00D1E00D /* UIAlertController+Simplified.swift in Sources */,
 				E7ACC7B81E39127C00D1E00D /* Item+CoreDataProperties.swift in Sources */,
 				E7ACC7B71E39127C00D1E00D /* Item+CoreDataClass.swift in Sources */,
 				E7ACC7AD1E3907FB00D1E00D /* OLXAPIManager.swift in Sources */,
+				E7ACC7C81E39978200D1E00D /* ItemCell.swift in Sources */,
 				E7ACC7B91E39127C00D1E00D /* Price+CoreDataClass.swift in Sources */,
 				E7887D351E38F9D000E2AC15 /* NetworkHelper.swift in Sources */,
+				E7ACC7D41E3A35FB00D1E00D /* CoreDataStack.swift in Sources */,
+				E7ACC7DD1E3A55B400D1E00D /* NSDate+ISO860.swift in Sources */,
+				E7ACC7C21E398C7500D1E00D /* ItemsViewController.swift in Sources */,
+				E7ACC7D51E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift in Sources */,
 				E7ACC7B21E39100900D1E00D /* Model.xcdatamodeld in Sources */,
 				E77134211E377CB30010B0A7 /* AppDelegate.swift in Sources */,
-				E7ACC7AF1E390FF500D1E00D /* CoreDataStack.swift in Sources */,
 				E7ACC7BA1E39127C00D1E00D /* Price+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,8 +24,8 @@ public class Price: NSManagedObject {
     
     func update(withJson json: JSON) {
         
-        if let amount = json["amount"] as? NSDecimalNumber {
-            self.amount = amount
+        if let amount = json["amount"] as? Int {
+            self.amount = NSDecimalNumber(value: amount)
         } else {
             self.amount = 0
         }

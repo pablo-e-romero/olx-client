@@ -148,7 +148,7 @@ public class Item: NSManagedObject {
     
     func update(withJson json: JSON) {
      
-        if let details = json["details"] as? String {
+        if let details = json["description"] as? String {
             self.details = details
         } else {
             self.details = nil
@@ -196,6 +196,15 @@ public class Item: NSManagedObject {
             self.thumbnail = nil
         }
         
+        if let date = json["date"] as? JSON {
+            if let timestamp = date["timestamp"] as? String, let timezone = date["timezone"] as? String {
+                self.createdAt = NSDate.date(withISO860String: "\(timestamp)\(timezone)")
+            } else {
+                self.createdAt = nil
+            }
+        } else {
+            self.createdAt = nil
+        }
     }
     
     func hasThumbnail() -> Bool {

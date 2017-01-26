@@ -16,6 +16,7 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item");
     }
 
+    @NSManaged public var createdAt: Date?
     @NSManaged public var details: String?
     @NSManaged public var thumbnail: String?
     @NSManaged public var imageColor: String?

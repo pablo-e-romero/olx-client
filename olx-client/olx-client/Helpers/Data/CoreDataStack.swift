@@ -49,13 +49,7 @@ class CoreDataStack: NSObject {
     }
     
     static func databaseUrl() -> URL {
-    
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-                                                       .userDomainMask,
-                                                       true).first!
-        
-        let url = URL(fileURLWithPath: path)
-        
+        let url = FileSystemHelper.documentsUrl()
         return url.appendingPathComponent("olx.sqlite")
     }
     
