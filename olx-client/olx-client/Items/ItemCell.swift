@@ -44,6 +44,8 @@ class ItemCell: UITableViewCell {
         self.contentView.layer.shadowRadius = 2.0
         self.contentView.layer.shadowColor = UIColor.black.cgColor
         self.contentView.layer.shadowOpacity = 0.2
+        
+        self.contentView.layer.rasterizationScale = UIScreen.main.scale
         self.contentView.layer.shouldRasterize = true;
         
         self.priceLabel.layer.cornerRadius = 5
@@ -62,16 +64,24 @@ class ItemCell: UITableViewCell {
             self.detailsLabel.text = item.createdAt!.friendlyDescription()
         }
         
-        self.priceLabel.text = item.price?.displayPrice ?? "No Price"
-        
-        // Resize width
-        let maxSize = CGSize(width: UIScreen.main.bounds.width - 6 * ItemCell.padding,
-                             height: self.priceLabel.frame.size.height)
-        
-        let newSize = self.priceLabel.sizeThatFits(maxSize)
+        if let price = item.price?.displayPrice {
             
-        self.priceLabelWidthConstraint.constant = newSize.width + 2 * ItemCell.padding
-    }
+            self.priceLabel.isHidden = false
+            self.priceLabel.text = price
+            
+            // Resize width
+            let maxSize = CGSize(width: UIScreen.main.bounds.width - 6 * ItemCell.padding,
+                                 height: self.priceLabel.frame.size.height)
+            
+            let newSize = self.priceLabel.sizeThatFits(maxSize)
+            
+            self.priceLabelWidthConstraint.constant = newSize.width + 2 * ItemCell.padding
+  
+        } else {
+            self.priceLabel.isHidden = true
+            self.priceLabel.text = ""
+        }
+   }
     
     static func neededHeight(forItem item: Item) -> CGFloat {
        
