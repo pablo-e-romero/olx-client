@@ -15,12 +15,11 @@ class OLXAPIManager: NSObject {
     let defaultPageSize: UInt = 25
     let baseUrl = URL(string: "http://api-v2.olx.com")!
     
-    func requestItems(searchTerm: String = "", atPage page: UInt = 0,
-                      completionHandler: @escaping (Error?) -> Void) {
+    func requestItems(searchTerm: String = "", offset: UInt = 0,
+                      completionHandler: @escaping (Bool?, Error?) -> Void) {
     
         let url = baseUrl.appendingPathComponent("items")
         var params = [String:Any]()
-        let offset: UInt = page * self.defaultPageSize
         
         params["location"] = "www.olx.com.ar"
         params["searchTerm"] = searchTerm
@@ -31,15 +30,14 @@ class OLXAPIManager: NSObject {
             
             if error != nil {
                 DispatchQueue.main.async {
-                    completionHandler(error)
+                    completionHandler(nil, error)
                 }
             } else {
                 self.processItemsResponse(json: json!,
-                                          resetLocalData: (page == 0),
                                           offset: offset,
-                                          completionHandler: {
+                                          completionHandler: { (reachedLastPage: Bool) in
                                             DispatchQueue.main.async {
-                                                completionHandler(nil)
+                                                completionHandler(reachedLastPage, nil)
                                             }
                 })
             }
@@ -47,20 +45,24 @@ class OLXAPIManager: NSObject {
     }
     
     private func processItemsResponse(json: JSON,
-                                      resetLocalData: Bool,
                                       offset: UInt,
-                                      completionHandler: @escaping ((Void) -> Void)) {
+                                      completionHandler: @escaping ((Bool) -> Void)) {
         
         CoreDataStack.sharedInstance.performBackgroundTask { (context: NSManagedObjectContext) in
             
+            let resetLocalData: Bool = (offset == 0)
             var newItems = Set<Item>()
-        
+         
             if let itemJsonsList = json["data"] as? [JSON] {
+                
+                var serverSort = offset
                 
                 for itemJson in itemJsonsList {
                     
                     let item = Item.create(withJson: itemJson,
                                            context: context)
+                    item.serverSort = Int16(serverSort)
+                    serverSort += 1
                     
                     if let priceJson = itemJson["price"] as? JSON {
                         if let price = item.price {
@@ -78,6 +80,8 @@ class OLXAPIManager: NSObject {
                 }
             }
             
+            let reachedLastPage = UInt(newItems.count) < self.defaultPageSize
+            
             if (resetLocalData)
             {
                 // Remove only the ones that aren't in the news set
@@ -92,7 +96,7 @@ class OLXAPIManager: NSObject {
             
             try! context.save()
             
-            completionHandler()
+            completionHandler(reachedLastPage)
         }
     }
 }

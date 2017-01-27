@@ -13,13 +13,16 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
 
     @IBOutlet var loadingNextPageView: UIView!
     
+    var isRequestingData: Bool = false
+    var hasReachedLastPage: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.titleView = UIImageView(image: #imageLiteral(resourceName: "OlxLogo"))
         
         self.setupTableView()
-        self.requestFirstPage()
+        self.requestPage()
         
         self.setNeedsStatusBarAppearanceUpdate()
     }
@@ -29,12 +32,27 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
     }
 
     func handleRefresh(refreshControl: UIRefreshControl) {
-        self.requestFirstPage()
+        self.requestPage()
     }
     
-    func requestFirstPage() {
+    // MARK: - Request data
+    
+    func requestPage(withOffset offset: UInt = 0) {
         
-        OLXAPIManager.sharedInstance.requestItems { (error: Error?) in
+        if self.isRequestingData {
+            return
+        }
+        
+        self.isRequestingData = true
+        
+        OLXAPIManager.sharedInstance.requestItems(offset: offset) { (reachedLastPage: Bool?, error: Error?) in
+        
+            if let error = error {
+                UIAlertController.presentAlert(withError: error,
+                                               overViewController: self)
+            } else {
+                self.hasReachedLastPage = reachedLastPage!
+            }
             
             self.refreshLoadingNextPageView()
             
@@ -42,9 +60,41 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
                 refreshControl.endRefreshing()
             }
             
-            if let error = error {
-                UIAlertController.presentAlert(withError: error,
-                                               overViewController: self)
+            self.isRequestingData = false
+        }
+    }
+    
+    func requestNextPage() {
+        let sectionInfo = self.fetchedResultsController.sections![0]
+        self.requestPage(withOffset: UInt(sectionInfo.numberOfObjects))
+    }
+    
+    func requestNextPageIfCorrespond() {
+    
+        let hasToRequestNextPage = !self.hasReachedLastPage && !self.isRequestingData
+    
+        if (hasToRequestNextPage)
+        {
+            let contentInset = self.tableView.contentInset;
+            let contentHeight = self.tableView.contentSize.height;
+            let contentOffsetY = self.tableView.contentOffset.y;
+            let visibleHeight = self.tableView.frame.size.height - contentInset.bottom;
+            let footerHeight = self.tableView.tableFooterView?.frame.size.height ?? 0;
+    
+            let isLoadNextPageAreaVisible = (visibleHeight >= (contentHeight - footerHeight - contentOffsetY));
+    
+            if (isLoadNextPageAreaVisible)
+            {
+                // We want to avoid multiple calls to requestNextPage
+                NSObject.cancelPreviousPerformRequests(withTarget: self,
+                                                       selector: #selector(requestNextPage),
+                                                       object: nil)
+                
+                let delay: TimeInterval = 0.5;
+               
+                self.perform(#selector(requestNextPage),
+                             with: nil,
+                             afterDelay: delay)
             }
         }
     }
@@ -69,8 +119,7 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     
     func refreshLoadingNextPageView() {
-        let context = CoreDataStack.sharedInstance.viewContext
-        if Item.isEmpty(context: context) {
+        if self.hasReachedLastPage || Item.isEmpty(context: CoreDataStack.sharedInstance.viewContext) {
             self.tableView.tableFooterView = nil
         } else {
             self.tableView.tableFooterView = self.loadingNextPageView
@@ -103,6 +152,12 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
         return cell
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.tableView {
+            self.requestNextPageIfCorrespond();
+        }
+    }
+    
     // MARK: - Fetched results controller
     
     var fetchedResultsController: NSFetchedResultsController<Item> {
@@ -114,8 +169,7 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         
         fetchRequest.fetchBatchSize = 20
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false),
-                                        NSSortDescriptor(key: "title", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "serverSort", ascending: true)]
         
         let context = CoreDataStack.sharedInstance.viewContext
         

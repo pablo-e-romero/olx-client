@@ -8,6 +8,7 @@
         <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imageColor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mediumImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serverSort" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="thumbnail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="price" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Price" inverseName="item" inverseEntity="Price" syncable="YES"/>
@@ -18,7 +19,7 @@
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="price" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="210"/>
         <element name="Price" positionX="-54" positionY="54" width="128" height="90"/>
     </elements>
 </model>

@@ -38,7 +38,6 @@ class UIRemoteImageView: UIImageView {
                                 self.presentErrorMode()
                             } else {
                                 if let currentUrl = self.currentContentURL, currentUrl == url {
-                                    print("downloaded \(url) to \(localUrl)")
                                     self.image = self.cachedImage(forRemoteUrl: url)!
                                 }
                             }
