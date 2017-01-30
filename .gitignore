@@ -72,3 +72,5 @@ fastlane/test_output
 /olx-client/olx-client.xcworkspace/
 
 /olx-client/olx-client/Items/.DS_Store
+
+/olx-client/olx-client/Resources/.DS_Store

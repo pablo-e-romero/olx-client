@@ -11,7 +11,7 @@ import CoreData
 
 class ItemsViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    @IBOutlet var loadingNextPageView: UIView!
+    @IBOutlet var loadingNextPageView: LoadingNextPageView!
     
     var isRequestingData: Bool = false
     var hasReachedLastPage: Bool = false
@@ -44,20 +44,26 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
         }
         
         self.isRequestingData = true
+        self.loadingNextPageView.setLoadingMode(true)
         
         OLXAPIManager.sharedInstance.requestItems(offset: offset) { (reachedLastPage: Bool?, error: Error?) in
-        
+            
             if let error = error {
-                UIAlertController.presentAlert(withError: error,
-                                               overViewController: self)
+                
+                self.loadingNextPageView.setLoadingError(error)
+                UIAlertController.presentAlert(withError: error, overViewController: self, completionHandler: {
+                    if let refreshControl = self.refreshControl {
+                        refreshControl.endRefreshing()
+                    }
+                })
             } else {
+                
                 self.hasReachedLastPage = reachedLastPage!
-            }
-            
-            self.refreshLoadingNextPageView()
-            
-            if let refreshControl = self.refreshControl {
-                refreshControl.endRefreshing()
+                self.refreshLoadingNextPageView()
+                
+                if let refreshControl = self.refreshControl {
+                    refreshControl.endRefreshing()
+                }
             }
             
             self.isRequestingData = false

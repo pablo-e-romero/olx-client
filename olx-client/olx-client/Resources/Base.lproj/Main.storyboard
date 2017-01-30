@@ -16,12 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="xAE-Qp-DFD">
-                            <rect key="frame" x="0.0" y="367" width="320" height="44"/>
+                        <view key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="xAE-Qp-DFD" customClass="LoadingNextPageView" customModule="olx_client" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="367" width="320" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error text!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFN-G0-2Vg">
+                                    <rect key="frame" x="4" y="4" width="312" height="58"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.090196078430000007" green="0.68235294120000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YoJ-ow-Jeu">
-                                    <rect key="frame" x="150" y="12" width="20" height="20"/>
+                                    <rect key="frame" x="150" y="23" width="20" height="20"/>
                                     <color key="backgroundColor" red="0.82755730370000002" green="0.0" blue="0.070126056189999994" alpha="0.0" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="VuK-sQ-Adq"/>
@@ -32,9 +38,17 @@
                             </subviews>
                             <color key="backgroundColor" red="0.82755730370000002" green="0.0" blue="0.070126056189999994" alpha="0.0" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="AFN-G0-2Vg" firstAttribute="top" secondItem="xAE-Qp-DFD" secondAttribute="top" constant="4" id="SKE-Zi-3rL"/>
+                                <constraint firstAttribute="bottom" secondItem="AFN-G0-2Vg" secondAttribute="bottom" constant="4" id="Szr-z5-kVJ"/>
                                 <constraint firstItem="YoJ-ow-Jeu" firstAttribute="centerX" secondItem="xAE-Qp-DFD" secondAttribute="centerX" id="g30-XB-Xji"/>
+                                <constraint firstItem="AFN-G0-2Vg" firstAttribute="leading" secondItem="xAE-Qp-DFD" secondAttribute="leading" constant="4" id="hrl-r8-r4H"/>
+                                <constraint firstAttribute="trailing" secondItem="AFN-G0-2Vg" secondAttribute="trailing" constant="4" id="luA-pl-wZW"/>
                                 <constraint firstItem="YoJ-ow-Jeu" firstAttribute="centerY" secondItem="xAE-Qp-DFD" secondAttribute="centerY" id="nDx-FT-AOC"/>
                             </constraints>
+                            <connections>
+                                <outlet property="errorLabel" destination="AFN-G0-2Vg" id="9O6-iB-fcV"/>
+                                <outlet property="spinner" destination="YoJ-ow-Jeu" id="pJr-Ex-k1p"/>
+                            </connections>
                         </view>
                         <prototypes>
                             <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" id="IHH-XZ-gLf" customClass="ItemCell" customModule="olx_client" customModuleProvider="target">

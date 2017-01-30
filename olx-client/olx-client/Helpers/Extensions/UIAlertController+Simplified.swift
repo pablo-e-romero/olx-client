@@ -12,7 +12,8 @@ import UIKit
 extension UIAlertController {
 
     static func presentAlert(withError error: Error,
-                             overViewController vc: UIViewController) {
+                             overViewController vc: UIViewController,
+                             completionHandler: (() -> Swift.Void)?) {
         
         let alertController = UIAlertController(title: nil,
                                                 message: error.localizedDescription,
@@ -23,7 +24,9 @@ extension UIAlertController {
                                      handler: nil)
         alertController.addAction(okButton)
         
-        vc.present(alertController, animated: true, completion: nil)
+        vc.present(alertController,
+                   animated: true,
+                   completion: completionHandler)
     }
 
 }
