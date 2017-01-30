@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		574BFBF51CDB7A0FD1E007C0 /* Pods_olx_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883286732A28C022355BF83D /* Pods_olx_client.framework */; };
+		E72B42BA1E3EB4E100CF7679 /* UILabelWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B42B91E3EB4E100CF7679 /* UILabelWithPadding.swift */; };
 		E77134211E377CB30010B0A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77134201E377CB30010B0A7 /* AppDelegate.swift */; };
 		E77134441E377D1E0010B0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E771343C1E377D1E0010B0A7 /* Assets.xcassets */; };
 		E77134451E377D1E0010B0A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E771343D1E377D1E0010B0A7 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		85C8658599E80252DCA0C260 /* Pods-olx-client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olx-client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-olx-client/Pods-olx-client.debug.xcconfig"; sourceTree = "<group>"; };
 		883286732A28C022355BF83D /* Pods_olx_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_olx_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E57EBE8EC80DD9CAD30A3A5 /* Pods-olx-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-olx-client.release.xcconfig"; path = "Pods/Target Support Files/Pods-olx-client/Pods-olx-client.release.xcconfig"; sourceTree = "<group>"; };
+		E72B42B91E3EB4E100CF7679 /* UILabelWithPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelWithPadding.swift; sourceTree = "<group>"; };
 		E771341D1E377CB30010B0A7 /* olx-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "olx-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77134201E377CB30010B0A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E771343C1E377D1E0010B0A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				E7ACC7E01E3A6E2600D1E00D /* UIRemoteImageView.swift */,
+				E72B42B91E3EB4E100CF7679 /* UILabelWithPadding.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				E7ACC7E11E3A6E2600D1E00D /* UIRemoteImageView.swift in Sources */,
 				E7ACC7C21E398C7500D1E00D /* ItemsViewController.swift in Sources */,
 				E7ACC7D51E3A35FB00D1E00D /* NSDate+FriendlyDescription.swift in Sources */,
+				E72B42BA1E3EB4E100CF7679 /* UILabelWithPadding.swift in Sources */,
 				E7ACC7B21E39100900D1E00D /* Model.xcdatamodeld in Sources */,
 				E77134211E377CB30010B0A7 /* AppDelegate.swift in Sources */,
 				E7ACC7BA1E39127C00D1E00D /* Price+CoreDataProperties.swift in Sources */,

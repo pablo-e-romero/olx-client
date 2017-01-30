@@ -110,6 +110,9 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
     
     func setupTableView() {
         
+        self.tableView.estimatedRowHeight = 339.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         self.refreshLoadingNextPageView()
         
         self.refreshControl!.addTarget(self,
@@ -134,12 +137,6 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
                             numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = self.fetchedResultsController.sections![section]
         return sectionInfo.numberOfObjects
-    }
-    
-    override func tableView(_ tableView: UITableView,
-                            heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let item = self.fetchedResultsController.object(at: indexPath)
-        return ItemCell.neededHeight(forItem: item)
     }
     
     override func tableView(_ tableView: UITableView,

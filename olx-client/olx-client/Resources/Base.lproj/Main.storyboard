@@ -57,7 +57,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHO-0y-Xu0" userLabel="Details Container">
                                                     <rect key="frame" x="0.0" y="242" width="304" height="89"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="34" translatesAutoresizingMaskIntoConstraints="NO" id="OIs-NA-HRt">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIs-NA-HRt">
                                                             <rect key="frame" x="8" y="8" width="288" height="21"/>
                                                             <color key="backgroundColor" red="0.82755730370000002" green="0.0" blue="0.070126056189999994" alpha="0.0" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -73,12 +73,11 @@
                                                             <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$120.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="400-tW-Sbp">
-                                                            <rect key="frame" x="8" y="60" width="288" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$120.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="400-tW-Sbp" customClass="UILabelWithPadding" customModule="olx_client" customModuleProvider="target">
+                                                            <rect key="frame" x="112.5" y="60" width="79.5" height="21"/>
                                                             <color key="backgroundColor" red="0.090196078430000007" green="0.68235294120000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Ahm-JY-Zv1"/>
-                                                                <constraint firstAttribute="width" constant="288" id="yDq-fK-gew"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -123,7 +122,6 @@
                                     <outlet property="cardContainerView" destination="Lxw-eJ-dxc" id="NOF-eB-hth"/>
                                     <outlet property="detailsLabel" destination="i56-aq-zJ3" id="VmY-nq-8y0"/>
                                     <outlet property="priceLabel" destination="400-tW-Sbp" id="7bA-Cs-ltL"/>
-                                    <outlet property="priceLabelWidthConstraint" destination="yDq-fK-gew" id="ixL-DP-f44"/>
                                     <outlet property="thumbnailImageView" destination="gZ8-O7-zN7" id="qAl-yK-6w5"/>
                                     <outlet property="titleLabel" destination="OIs-NA-HRt" id="SZ9-jR-tAc"/>
                                 </connections>
