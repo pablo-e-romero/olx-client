@@ -23,14 +23,8 @@ class ItemsViewController: UITableViewController, NSFetchedResultsControllerDele
         
         self.setupTableView()
         self.requestPage()
-        
-        self.setNeedsStatusBarAppearanceUpdate()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     func handleRefresh(refreshControl: UIRefreshControl) {
         self.requestPage()
     }

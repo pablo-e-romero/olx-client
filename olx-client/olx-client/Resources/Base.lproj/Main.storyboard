@@ -160,8 +160,7 @@
         <scene sceneID="IA7-xX-lLD">
             <objects>
                 <navigationController id="5FF-gf-222" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T95-wJ-Bno">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="T95-wJ-Bno">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.090196078431372548" green="0.68235294117647061" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
